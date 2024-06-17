@@ -1,0 +1,367 @@
+/* Définition des polices */
+@font-face {
+    font-family: lemon;
+    src: url(../Font/lemon_milk/LEMONMILK-Regular.otf);
+}
+
+@font-face {
+    font-family: lune;
+    src: url(../Font/moon_phases/moon_phases.ttf);
+}
+
+/* Définitions de variable */
+:root {
+    --color-fond: #C6D8D3;
+    --color-main: #003049;
+    --color-second: #CC5803;
+    --color-font: white;
+    --color-font-hover: white;
+    --color-hover: #F7934C;
+    --font-fam: lemon;
+}
+
+/* Style global */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-fam);
+    text-align: center;
+    background-color: var(--color-fond);
+    color: var(--color-font);
+}
+
+/* Modification texte */
+h1,
+h2,
+h3,
+p {
+    text-align: center;
+}
+
+/* Annule les modifications de base des liens */
+a {
+    text-decoration: none;
+    color: var(--color-font);
+}
+
+/* Taille polices */
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+a,
+p {
+    font-size: 1.7vw;
+}
+
+#signature {
+    font-size: 1vw;
+}
+
+.textPopup {
+    color: black;
+}
+
+.illustration {
+    padding: 10px;
+    width: 300px;
+}
+
+/* Style pour le logo */
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.logo {
+    width: 20%;
+}
+
+header:hover .logo,
+footer:hover .logo {
+    animation: rotate 2s linear infinite;
+}
+
+/*Style pour les boutons  */
+input[type=button],
+input[type=submit],
+input[type=reset],
+button {
+    cursor: pointer;
+    background-color: var(--color-second);
+    border: none;
+    color: var(--color-font);
+    font-family: var(--font-fam);
+    padding: 10px 20px;
+    font-size: 0.8em;
+    transition: 0.3s ease;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+button:hover {
+    background-color: var(--color-hover);
+    color: var(--color-font-hover);
+}
+
+
+#Pause,
+.ValiderFiltre {
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
+}
+
+.border_top {
+    border-top: var(--color-second) solid 3px;
+}
+
+.border_complet {
+    border: var(--color-second) solid 3px;
+}
+
+/*------------------- Header ------------------- */
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--color-main);
+    margin-bottom: 20px;
+    z-index: 100;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+/*------------------- Footer ------------------- */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-main);
+    padding: 20px 0;
+    z-index: 100;
+}
+
+#iconTheme {
+    font-family: lune;
+}
+
+#jeu {
+    align-items: center;
+}
+
+#reponse {
+    text-align: center;
+}
+
+@keyframes retourTop {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    75% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#retour_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-second);
+    animation: retourTop 2s linear infinite;
+    margin: 1vw;
+}
+
+#retour_top:hover {
+    animation-duration: 1s;
+    background-color: var(--color-hover);
+    color: var(--color-font-hover);
+}
+
+.retourTopIMG {
+    width: 20%;
+}
+
+/*------------------- Main ------------------- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloc-principale {
+    width: 80%;
+    border-radius: 20px 20px 0 0;
+    background-color: var(--color-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*------------------- Filtre ------------------- */
+.blocFiltre {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-main);
+    border-radius: 5%;
+}
+
+@media(max-width: 860px) {
+    .blocFiltre {
+        width: 70%;
+    }
+}
+
+/*------------------- Diapo/Carrousel ------------------- */
+#diapo {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: 25% 25%;
+    z-index: 0;
+}
+
+#filtre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    height: 4vw;
+    display: none;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+#titre-diapo_MD,
+#texte-diapo_MD {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*------------------- Liste d'artistes/groupes/albums/musiques  ------------------- */
+.container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bloc_info {
+    width: 25%;
+    margin: 10px;
+    padding: 15px;
+    background-color: var(--color-second);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.bloc_info:hover {
+    background-color: var(--color-hover);
+    width: 30%;
+    border-radius: 5%;
+    color: var(--color-font-hover);
+}
+
+.Liste_img {
+    width: 70%;
+    transition: 0.3s ease;
+}
+
+.bloc_info:hover .Liste_img {
+    border-radius: 5%;
+}
+
+/*------------------- Liste déroulante  ------------------- */
+/* Style de base pour toutes les listes déroulantes */
+select {
+    width: 100%;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: var(--color-hover);
+}
+
+select:focus {
+    outline: none;
+    border: 1px solid #999;
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+
+
+/*------------------- Admin  ------------------- */
+#GROUPE,
+#ARTISTE,
+#ALBUM {
+    display: none;
+}
