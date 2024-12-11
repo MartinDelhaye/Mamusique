@@ -33,7 +33,7 @@
                 <span>Nom : <input type="checkbox" value="Nom" name="orderType" id="orderType"></span>
                 <span>Date  : <input type="checkbox" value="Date" name="orderType" id="orderType"></span> <br>
                 <select name="ordre" size=1 required="required">
-                    <option value="id_musique ASC">Indiférents  </option>
+                    <option value="id_artiste ASC">Indiférents  </option>
                 </select><br/><br/>
         </div>
             <input type="submit" value="Valider" class="ValiderFiltre"/>
